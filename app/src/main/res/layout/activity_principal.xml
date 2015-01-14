@@ -1,0 +1,119 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin" tools:context=".Principal"
+    android:background="#ff000000">
+
+    <FrameLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:background="#ff000000">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/talk"
+            android:id="@+id/btTalk"
+            android:layout_gravity="center"
+            android:onClick="talk"
+            android:background="@drawable/bt_talk"
+            android:textColor="#fff"
+            android:textSize="25sp"
+            android:textStyle="bold|italic" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/textView"
+            android:layout_gravity="center_horizontal|bottom"
+            android:layout_marginBottom="35dp"
+            android:gravity="center"
+            android:textColor="#000000"
+            android:background="#ffffffff"
+            android:textSize="20sp" />
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/tono"
+                android:id="@+id/textView2"
+                android:textColor="#fff"
+                android:textSize="20sp" />
+
+            <SeekBar
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/sbTono"
+                android:layout_gravity="center_horizontal|top"
+                android:max="10"
+                android:indeterminate="false"
+                android:progressTint="#fffdffed"
+                android:progress="6" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/velocidad"
+                android:id="@+id/textView3"
+                android:textSize="20sp"
+                android:textColor="#fff" />
+
+            <SeekBar
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/sbVelocidad"
+                android:max="20"
+                android:progress="10"
+                android:indeterminate="false"
+                android:progressTint="#ffffff" />
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:gravity="center_horizontal">
+
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:id="@+id/ivEspanol"
+                    android:layout_weight="1"
+                    android:onClick="esp"
+                    android:src="@drawable/esp" />
+
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:id="@+id/ivIngles"
+                    android:layout_weight="1"
+                    android:onClick="en"
+                    android:src="@drawable/en" />
+
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:id="@+id/ivFrances"
+                    android:layout_weight="1"
+                    android:onClick="fr"
+                    android:src="@drawable/fr" />
+
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:id="@+id/ivItaliano"
+                    android:onClick="it"
+                    android:layout_weight="1"
+                    android:src="@drawable/it" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </FrameLayout>
+</RelativeLayout>
