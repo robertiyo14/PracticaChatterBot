@@ -2,6 +2,7 @@ package com.izv.practicachatterbot;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -12,6 +13,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.SeekBar;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -38,6 +40,7 @@ public class Principal extends Activity implements TextToSpeech.OnInitListener{
     String frase = "";
     int tono,velocidad;
     SeekBar sbTono, sbVelocidad;
+    ImageView ivEsp,ivEn,ivFr,ivIt;
 
 
     @Override
@@ -47,6 +50,10 @@ public class Principal extends Activity implements TextToSpeech.OnInitListener{
         Intent i = new Intent();
         et = (TextView)findViewById(R.id.textView);
         sbTono = (SeekBar)findViewById(R.id.sbTono);
+        ivEsp = (ImageView)findViewById(R.id.ivEspanol);
+        ivEn = (ImageView)findViewById(R.id.ivIngles);
+        ivFr = (ImageView)findViewById(R.id.ivFrances);
+        ivIt = (ImageView)findViewById(R.id.ivItaliano);
         sbVelocidad = (SeekBar)findViewById(R.id.sbVelocidad);
         i.setAction(TextToSpeech.Engine.ACTION_CHECK_TTS_DATA);
         startActivityForResult(i, CTE);
@@ -58,6 +65,10 @@ public class Principal extends Activity implements TextToSpeech.OnInitListener{
             e.printStackTrace();
         }
         bot1Session = bot1.createSession();
+        ivEsp.setImageResource(R.drawable.espact);
+        ivEn.setImageResource(R.drawable.en);
+        ivFr.setImageResource(R.drawable.fr);
+        ivIt.setImageResource(R.drawable.it);
     }
 
     public void talk(View v){
@@ -166,17 +177,33 @@ public class Principal extends Activity implements TextToSpeech.OnInitListener{
 
     public void esp(View v){
         tts.setLanguage(new Locale("es", "ES"));
+        ivEsp.setImageResource(R.drawable.espact);
+        ivEn.setImageResource(R.drawable.en);
+        ivFr.setImageResource(R.drawable.fr);
+        ivIt.setImageResource(R.drawable.it);
     }
 
     public void fr(View v){
         tts.setLanguage(Locale.FRENCH);
+        ivEsp.setImageResource(R.drawable.esp);
+        ivEn.setImageResource(R.drawable.en);
+        ivFr.setImageResource(R.drawable.fract);
+        ivIt.setImageResource(R.drawable.it);
     }
 
     public void en(View v){
         tts.setLanguage(Locale.UK);
+        ivEsp.setImageResource(R.drawable.esp);
+        ivEn.setImageResource(R.drawable.enact);
+        ivFr.setImageResource(R.drawable.fr);
+        ivIt.setImageResource(R.drawable.it);
     }
 
     public void it(View v){
         tts.setLanguage(Locale.ITALIAN);
+        ivEsp.setImageResource(R.drawable.esp);
+        ivEn.setImageResource(R.drawable.en);
+        ivFr.setImageResource(R.drawable.fr);
+        ivIt.setImageResource(R.drawable.itact);
     }
 }
